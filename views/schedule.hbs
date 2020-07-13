@@ -1,0 +1,65 @@
+<div class="offset-4 col-4 my-5">
+    <h3 class=" mt-5 mb-4">Enter new schedule</h3>
+
+    <form action="/schedule" method="post" class="mb-3">
+    
+        <div class="container mt-3">
+            <div class="form-group">
+                <label for="select-example">Weekday: </label>
+            <select class="select-example" name="day" placeholder="Select Weekday" required>
+                <option value="">Select weekday...</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+            </div>    
+        </div>
+
+        <div class="container mt-3">
+            <div class="form-group">
+                <label for="appt">Start Time: </label>
+                <input type="time" id="appt" name="startTime" required >
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <div class="form-group">
+                <label for="appt">End Time: </label>
+                <input type="time" id="appt" name="endTime" required >
+            </div>
+        </div>
+        
+        <div class="container mt-3">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        
+    </form>
+    
+</div>
+
+<div class="mt-5">
+    <h3 class=" mt-5 mb-4">Your existing schedules</h3>
+
+        <table class="table mb-5">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Start at</th>
+                    <th>End at</th>
+                </tr>
+            </thead>
+            {{#each schedule_details}}
+        <tr>
+            <td>{{ this.day}}</td>
+            <td>{{ this.start_time}}</td>
+            <td>{{ this.end_time}}</td>
+        </tr>
+        {{/each}}
+        </table>
+</div>

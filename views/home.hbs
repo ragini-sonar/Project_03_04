@@ -1,0 +1,22 @@
+<div style="margin-top: 30px">
+    <h1 class="text-center mb-5"> All Schedules </h1>
+
+    <table class="table mb-5">
+        <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Day</th>
+                <th>Start at</th>
+                <th>End at</th>
+            </tr>
+        </thead>
+        {{#each result}}
+        <tr>
+            <td><a href="/user/{{this.user_id}}">{{this.name}} {{this.surname}}</a></td>
+            <td>{{ this.day}}</td>
+            <td>{{ this.start_time}}</td>
+            <td>{{ this.end_time}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

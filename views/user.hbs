@@ -1,0 +1,24 @@
+<div class="mt-5">
+
+<p><b>First Name</b>: {{userData.name}}</p>
+<p><b>Last Name</b>: {{userData.surname}}</p>
+<p><b>Email</b>: {{userData.emailid}}</p>
+ 
+    <table class="table mb-5">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Start at</th>
+                <th>End at</th>
+            </tr>
+        </thead>
+        {{#each scheduleData}}
+        <tr>
+            <td>{{this.day}}</td>
+            <td>{{this.start_time}}</td>
+            <td>{{this.end_time}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    
+</div>
